@@ -1,0 +1,26 @@
+{
+   "eight": {
+      "name": "8️⃣ Заведующий Клиникой",
+      "price": 5000000,
+      "min_days": 60,
+      "zarplata": 720000
+   },
+   "seven": {
+      "name": "7️⃣ Заведующий Отделением",
+      "price": 3333333,
+      "min_days": 30,
+      "zarplata": 670000
+   },
+   "six": {
+      "name": "6️⃣ Хирург",
+      "price": 2666666,
+      "min_days": 30,
+      "zarplata": 620000
+   },
+   "five": {
+      "name": "5️⃣ Окулист",
+      "price": 0,
+      "min_days": 0,
+      "zarplata": 475000
+   }
+}
