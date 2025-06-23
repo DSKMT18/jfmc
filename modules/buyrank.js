@@ -266,7 +266,7 @@ export const buyRankScene = new Scenes.WizardScene(
                `<b>Никнейм:</b> <code>${nickname}</code>\n` +
                `<b>Ранг:</b> <code>${fullRankName}</code>\n` +
                `<b>Дней:</b> <code>${days}</code>\n` +
-               `<b>Общая сумма:</b> <code>${totalCost.toLocaleString('ru-RU')}$</code>`,
+               `<b>Общая сумма:</b> <code>${totalCost.toLocaleString('ru-RU')}$</code>\n\n⚠ В случае получения вами варна/бана по вашей вине - ранг не возвращается!`,
             parse_mode: 'HTML',
             reply_markup: Markup.inlineKeyboard([
                [Markup.button.callback('Подтвердить', 'confirm')],
@@ -327,7 +327,7 @@ export const buyRankScene = new Scenes.WizardScene(
                   ]).reply_markup,
                });
 
-               await ctx.reply('Ваша заявка на покупку ранга отправлена на рассмотрение!');
+               await ctx.reply('✅ Ваша заявка на покупку ранга отправлена на рассмотрение!');
                return ctx.scene.leave();
             }
 
@@ -352,7 +352,7 @@ export const buyRank = async (ctx) => {
       const blacklistData = await readFile('./blacklist.json', 'utf8').catch(() => '[]');
       const blacklist = JSON.parse(blacklistData);
       if (blacklist.includes(ctx.from.id)) {
-         await ctx.reply('Вы находитесь в черном списке и не можете отправлять заявки.');
+         await ctx.reply('Вы находитесь в черном списке и не можете отправлять заявки.\nОбратитесь к @dskmt');
          return;
       }
       await ctx.scene.enter('BUY_RANK_SCENE');

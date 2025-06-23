@@ -8,10 +8,10 @@ export const freeRanks = async (Bot, chatId) => {
       await Bot.telegram.sendMessage(
          chatId,
          `<b>[Свободные ранги]</b>\n` +
-         `<blockquote><b>Дата обновления:</b> ${data.update} [MSK]\n` +
-         `<b>Заведующий Клиникой[8]:</b> ${data.ranks.eight}/11\n` +
-         `<b>Заведующий Отделением[7]:</b> ${data.ranks.seven}/22\n` +
-         `<b>Хирург[6]:</b> ${data.ranks.six}/28</blockquote>`,
+         `<blockquote><b>Дата обновления:</b> <code>${data.update} [MSK]</code>\n` +
+         `<b>Заведующий Клиникой[8]:</b> <code>${data.ranks.eight}/11</code>\n` +
+         `<b>Заведующий Отделением[7]:</b> <code>${data.ranks.seven}/22</code>\n` +
+         `<b>Хирург[6]:</b> <code>${data.ranks.six}/28</code></blockquote>`,
          { parse_mode: 'HTML' }
       );
    } catch (error) {

@@ -15,7 +15,7 @@ export function setupBuyRankHandlers(Bot, pendingReasons) {
             const reason = ctx.message.text;
 
             const decisionText = type === 'approve' ? `✅ Заявка на покупку ранга одобрена @${ctx.from.username}` : `❌ Заявка на покупку ранга отклонена @${ctx.from.username}`;
-            const finalCaption = `${originalCaption}\n<blockquote>\n${decisionText}\n<b>Причина:</b> ${reason}</blockquote>`;
+            const finalCaption = `${originalCaption}\n<blockquote>\n${decisionText}\n<b>Примечание:</b> ${reason}</blockquote>`;
 
             try {
                // Редактируем сообщение с заявкой
